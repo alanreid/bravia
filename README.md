@@ -6,7 +6,9 @@ Control your Sony Bravia TV using nodejs.
 ### One time setup
 * Turn on your TV 
 * Find your TV's IP address
-* Execute the `demo.js` file
+* Run `npm install`
+* Edit the `demo.js` file with your TV's IP 
+* Run `node demo.js` 
 * If you're running this script for the first time, you will be asked to enter a 4-digit code shown on your TV
 * Done! 
 
