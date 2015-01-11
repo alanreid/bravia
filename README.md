@@ -28,7 +28,7 @@ bravia('192.168.1.100', function(client) {
 ```
 
 ### Authentication
-This library handles the authentication process with the TV, saving the generated cookie as a file that can be accessed in later executions. If you need to refresh the credentials for some reason, just remove any content of the `cookies.json` file.
+This library handles the authentication process with the TV, saving the generated cookie as a file that can be accessed in later executions. If you need to refresh the credentials for some reason, just remove any content from the `cookies.json` file.
 
 
 ### Available commands
