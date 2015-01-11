@@ -1,0 +1,17 @@
+{
+  "name": "bravia",
+  "version": "1.0.0",
+  "description": "Control your Sony Bravia TV",
+  "main": "lib/index.js",
+  "dependencies": {
+    "node-uuid": "^1.4.2",
+    "request": "^2.51.0",
+    "tough-cookie-filestore": "0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alan Reid",
+  "license": "Apache 2.0"
+}
