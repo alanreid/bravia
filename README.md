@@ -3,7 +3,7 @@ Bravia Remote Control
 
 Control your Sony Bravia TV using nodejs.
 
-#####Warning: I moved, so no longer have a Bravia TV and unfortunately I can't maintain this project anymore :( I will do my best to help out with any issues, but I won't be able to reproduce them.
+#####Warning: I moved and I no longer own a Bravia TV. Unfortunately that means I can't maintain this project anymore :( I will do my best to help out with any issues you may encounter, but I won't be able to reproduce them.
 
 ### One time setup
 * Turn on your TV 
