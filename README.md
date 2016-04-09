@@ -6,10 +6,18 @@ Control your Sony Bravia TV using nodejs.
 #####Warning: I moved and I no longer own a Bravia TV. Unfortunately that means I can't maintain this project anymore :( I will do my best to help out with any issues you may encounter, but I won't be able to reproduce them.
 
 ### One time setup
-* Turn on your TV 
+
+#### TV Setup
+* Turn on your TV
+* On the TV go to Settings > Network > Home network setup > Remote device/Renderer > On
+* On the TV go to Settings > Network > Home network setup > IP Control > Authentication > Normal and Pre-Shared Key
+* On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Enter Pre-Shared Key > 0000 (or whatever you want your PSK Key to be)
+* On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Simple IP Control > On
+
+#### Node Setup
 * Find your TV's IP address
 * Run `npm install`
-* Edit the `demo.js` file with your TV's IP 
+* Edit the `demo.js` file with your TV's IP
 * Run `node demo.js` 
 * If you're running this script for the first time, you will be asked to enter a 4-digit code shown on your TV
 
@@ -20,7 +28,8 @@ This library handles the authentication process with the TV, saving the generate
 
 ### Usage
 ```
-bravia('192.168.1.100', function(client) {
+// Accepts two parameters, IP and PSKKey
+bravia('192.168.1.100', '0000', function(client) {
 
   // List available commands
   client.getCommandNames(function(list) {
@@ -44,7 +53,7 @@ The available commands may vary from model to model. I'm getting the following o
 I've also added a `PowerOn` command to that list, that implements WakeOnLAN to turn your TV on.
 
 ### TODO
-* Clean up the code a bit 
+* Clean up the code a bit
 * TV auto-detection (via UPnP or similar)
 * Shortcut commands
 
