@@ -3,27 +3,26 @@ Bravia Remote Control
 
 Control your Sony Bravia TV using nodejs.
 
-#####Warning: I moved and I no longer own a Bravia TV. Unfortunately that means I can't maintain this project anymore :( I will do my best to help out with any issues you may encounter, but I won't be able to reproduce them.
-
 ### One time setup
 
-#### TV Setup
+##### TV Setup
 * Turn on your TV
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > On
 * On the TV go to Settings > Network > Home network setup > IP Control > Authentication > Normal and Pre-Shared Key
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Enter Pre-Shared Key > 0000 (or whatever you want your PSK Key to be)
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Simple IP Control > On
 
-#### Node Setup
+##### Node Setup
 * Find your TV's IP address
 * Run `npm install`
-* Edit the `demo.js` file with your TV's IP
+* Edit the `demo.js` file with your TV's IP & PSK Key
 * Run `node demo.js` 
 * If you're running this script for the first time, you will be asked to enter a 4-digit code shown on your TV
 
 
 ### Authentication
-This library handles the authentication process with the TV, saving the generated cookie as a file that can be accessed in later executions. If you need to refresh the credentials for some reason, just remove any content from the `cookies.json` file.
+New Method - If you provide a PSK key to the function it will use that to authenticate rather than going through the old method. 
+Old Method - This library handles the authentication process with the TV, saving the generated cookie as a file that can be accessed in later executions. If you need to refresh the credentials for some reason, just remove any content from the `cookies.json` file.
 
 
 ### Usage
