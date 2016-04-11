@@ -21,7 +21,8 @@ Control your Sony Bravia TV using nodejs.
 
 
 ### Authentication
-New Method - If you provide a PSK key to the function it will use that to authenticate rather than going through the old method. 
+New Method - If you provide a PSK key to the function it will use that to authenticate rather than going through the old method.
+
 Old Method - This library handles the authentication process with the TV, saving the generated cookie as a file that can be accessed in later executions. If you need to refresh the credentials for some reason, just remove any content from the `cookies.json` file.
 
 
