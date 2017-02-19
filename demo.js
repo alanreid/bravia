@@ -1,4 +1,4 @@
-
+var bravia = require('./lib');
 // Accepts two parameters: IP and PSKKey
 
 bravia('192.168.1.100', '0000', function(client) {
