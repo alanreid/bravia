@@ -1,23 +1,25 @@
+#!/usr/bin/env node
+
 const http = require('http')
 var express = require('express');
 var bravia = require('./lib');
 
 var app = express();
 
-const port = 5006
-const tvIP = '192.1.168.100'
+const port = process.env.PORT
+const tvIP = process.env.TV_IP
 const pskKey = '0000'
 
 // Set up the server
 app.get('/:intent', function (req, res) {
 
-	// Get the intent 
+	// Get the intent
 	var intent = req.params.intent;
-  	
+
   	// Confirm the intent
   	console.log('Running ' + intent);
 
-  	// Call the Bravia function. 
+  	// Call the Bravia function.
   	bravia(tvIP, pskKey, function(client) {
 
       // Call a command
@@ -31,5 +33,5 @@ app.get('/:intent', function (req, res) {
 
 // Set up the port listener
 app.listen(port, function () {
-  console.log('Example app listening on port ' + port + '!');
+  console.log('Bravia listening on port ' + port + '!');
 });
