@@ -6,6 +6,11 @@ var bravia = require('./lib');
 
 var app = express();
 
+process.on('SIGINT', function() {
+    console.log("Caught interrupt signal");
+		process.exit();
+});
+
 const port = process.env.PORT
 const tvIP = process.env.TV_IP
 const pskKey = '0000'
@@ -34,4 +39,5 @@ app.get('/:intent', function (req, res) {
 // Set up the port listener
 app.listen(port, function () {
   console.log('Bravia listening on port ' + port + '!');
+	console.log('Bravia TV is set to ' + tvIP);
 });
