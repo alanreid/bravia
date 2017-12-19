@@ -9,11 +9,12 @@ var request = require('request'),
 
 // Now accepts a PSKKey. No longer requires authentication cookies, so allows for a permanent connection.
 // Cookie method left in for completeness
-var Bravia = function(ip, pskkey, callback) {
+var Bravia = function(ip, mac, pskkey, callback) {
 
   var that = this;
 
   this.ip = ip;
+  this.macAddress = mac;
   this.device = ip;
   this.nickname = 'Pi';
   this.pskKey = pskkey;
@@ -48,7 +49,8 @@ Bravia.prototype.exec = function(command) {
 Bravia.prototype.wake = function() {
 
   var that = this;
-
+  wol.wake(that.macAddress);
+/*
   arpTable.fetch(function(err, table) {
     for(var i in table) {
       if(table[i].ip === that.ip) {
@@ -56,7 +58,7 @@ Bravia.prototype.wake = function() {
       }
     }
   });
-
+*/
 };
 
 Bravia.prototype.getCommandList = function(callback) {
@@ -251,6 +253,6 @@ Bravia.prototype.updateCookieJar = function(callback) {
   callback();
 }
 
-module.exports = function(ip, pskkey, callback) {
-  return new Bravia(ip, pskkey, callback);
+module.exports = function(ip, mac, pskkey, callback) {
+  return new Bravia(ip, mac, pskkey, callback);
 };
