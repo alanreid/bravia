@@ -1,14 +1,24 @@
 var bravia = require('./lib');
 // Accepts two parameters: IP and PSKKey
 
-bravia('192.168.1.100', '0000', function(client) {
+var readline = require('readline');
+
+bravia('10.0.0.244', '1234', function(client) {
 
   // List available commands
   client.getCommandNames(function(list) {
     console.log(list);
   });
+      var rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+        terminal: false
+      });
 
-  // Call a command
-  client.exec('Netflix');
+      rl.on('line', function(line){
+        // console.log(line);
+        client.exec(line);
+    })
+
 
 });
