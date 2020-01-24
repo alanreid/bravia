@@ -11,7 +11,6 @@ process.on('SIGINT', function() {
 		process.exit();
 });
 
-const port = process.env.PORT
 const tvIP = process.env.TV_IP
 const tvMAC = process.env.TV_MAC
 const pskKey = '0000'
@@ -26,10 +25,10 @@ app.get('/:intent', function (req, res) {
 	console.log('Running ' + intent);
 
 	// Call the Bravia function.
-  bravia(tvIP, tvMAC, pskKey, function(client) {
+	bravia(tvIP, tvMAC, pskKey, function(client) {
 
     // Call a command
-	  client.exec(intent);
+	client.exec(intent);
 
     // Send back the ok status.
     res.sendStatus(200);
@@ -38,8 +37,8 @@ app.get('/:intent', function (req, res) {
 });
 
 // Set up the port listener
-app.listen(port, function () {
-  console.log('Bravia listening on port ' + port + '!');
+app.listen(3000, function () {
+	console.log('Bravia listening on port 3000!');
 	console.log('Bravia TV is set to ' + tvIP);
-  console.log('Bravia TV is wake up(able) to ' + tvMAC);
+	console.log('Bravia TV is wake up(able) to ' + tvMAC);
 });
