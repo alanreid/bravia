@@ -37,8 +37,8 @@ app.get('/:intent', function (req, res) {
 });
 
 // Set up the port listener
-app.listen(3000, function () {
-	console.log('Bravia listening on port 3000!');
+app.listen(3100, function () {
+	console.log('Bravia listening on port 3100!');
 	console.log('Bravia TV is set to ' + tvIP);
 	console.log('Bravia TV is wake up(able) to ' + tvMAC);
 });
